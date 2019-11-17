@@ -1,0 +1,15 @@
+.dark-background-transition{
+  transition: background-color 0.3s ease-out;
+  &:active{
+    background-color: lighten(@menu-active-color, 10%);
+    transition: none;
+  }
+}
+
+.light-background-transition{
+  transition: background-color 0.3s ease-out;
+  &:active{
+    background-color: lighten(@subsidiary-color, 30%);
+    transition: none;
+  }
+}

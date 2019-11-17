@@ -1,0 +1,79 @@
+.list-enter-active {
+  &.lv-serious {
+    animation-name: target-animation1;
+    @keyframes target-animation1 {
+      0% {
+        background: lighten(@color-level-serious, 20%);
+      }
+      100% {
+        box-shadow: 0 0 0 5px rgba(255, 249, 219, 0), 0 0 0 7px rgba(255, 243, 191, 0);
+        background: #fff !important;
+      }
+    }
+  }
+
+  &.lv-high {
+    animation-name: target-animation2;
+    @keyframes target-animation2 {
+      0% {
+        background: lighten(@color-level-high, 20%);
+      }
+      100% {
+        box-shadow: 0 0 0 5px rgba(255, 249, 219, 0), 0 0 0 7px rgba(255, 243, 191, 0);
+        background: #fff !important;
+      }
+    }
+  }
+
+  &.lv-medium {
+    animation-name: target-animation3;
+    @keyframes target-animation3 {
+      0% {
+        background: lighten(@color-level-medium, 20%);
+      }
+      100% {
+        box-shadow: 0 0 0 5px rgba(255, 249, 219, 0), 0 0 0 7px rgba(255, 243, 191, 0);
+        background: #fff !important;
+      }
+    }
+  }
+
+  &.lv-low {
+    animation-name: target-animation4;
+    @keyframes target-animation4 {
+      0% {
+        background: lighten(@color-level-low, 20%);
+      }
+      100% {
+        box-shadow: 0 0 0 5px rgba(255, 249, 219, 0), 0 0 0 7px rgba(255, 243, 191, 0);
+        background: #fff !important;
+      }
+    }
+  }
+
+  &.lv-info {
+    animation-name: target-animation5;
+    @keyframes target-animation5 {
+      0% {
+        background: lighten(@color-level-info, 20%);
+      }
+      100% {
+        box-shadow: 0 0 0 5px rgba(255, 249, 219, 0), 0 0 0 7px rgba(255, 243, 191, 0);
+        background: #fff !important;
+      }
+    }
+  }
+
+  &.lv-none {
+    animation-name: target-animation6;
+    @keyframes target-animation6 {
+      0% {
+        background: lighten(@color-level-none, 20%);
+      }
+      100% {
+        box-shadow: 0 0 0 5px rgba(255, 249, 219, 0), 0 0 0 7px rgba(255, 243, 191, 0);
+        background: #fff !important;
+      }
+    }
+  }
+}

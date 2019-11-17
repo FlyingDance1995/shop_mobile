@@ -1,0 +1,41 @@
+.cs-loading{
+  .flex-column();
+  .center();
+  .middle();
+  height: calc(100vh - 150px);
+  width: 100%;
+  .spin-icon-load{
+    animation: spin 1s linear infinite;
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg);}
+    50%  { transform: rotate(180deg);}
+    to   { transform: rotate(360deg);}
+  }
+  &-horizontal{
+    .flex-column();
+    .center();
+    .middle();
+    .px-xs();
+    height: auto;
+    z-index:9999;
+    background: white;
+    .spin-icon-load{
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg);}
+      50%  { transform: rotate(180deg);}
+      to   { transform: rotate(360deg);}
+    }
+    .ivu-spin-show-text .ivu-spin-text{
+      display: flex;
+      flex-direction: row;
+      .p-sm();
+      div{
+        .ml-xs();
+      }
+    }
+  }
+}
+

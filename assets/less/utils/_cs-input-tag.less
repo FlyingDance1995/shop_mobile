@@ -1,0 +1,53 @@
+.vue-input-tag-wrapper {
+  border-radius: 5px;
+  min-height: 100px;
+  line-height: 1.4 !important;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  cursor: text;
+  text-align: left;
+  -webkit-appearance: textfield;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.vue-input-tag-wrapper .input-tag {
+  display: inline-flex;
+  font-weight: 400;
+  margin: 2px 4px 2px 2px;
+  padding: 3px 5px;
+  background: #f7f7f7;
+  max-height: 27px;
+  border-radius: 5px;
+
+  border: 1px solid #eee;
+  flex-direction: row;
+  align-items: center;
+}
+
+.vue-input-tag-wrapper .new-tag {
+  background: transparent;
+  border: 0;
+  font-weight: 400;
+  margin: 2px 4px 2px 0;
+  outline: none;
+  flex-grow: 1;
+  padding: 4px 7px;
+}
+
+.vue-input-tag-wrapper .input-tag .remove {
+  cursor: pointer;
+  font-weight: bold;
+  color: #638421;
+  padding: 0 5px 0 7px;
+}
+
+.vue-input-tag-wrapper .input-tag .remove:hover {
+  text-decoration: none;
+  color: red;
+}
+
+.vue-input-tag-wrapper .input-tag .remove::before {
+  content: "x";
+}
