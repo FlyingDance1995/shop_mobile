@@ -942,7 +942,25 @@
       getListSlide() {
         this.$clientApi.slide.getListSlide(this.$axios)
           .then(res => {
-            this.licenseDetail = res.data;
+            // this.licenseDetail = res.data;
+            this.licenseDetail = [
+              {
+                "id": 1,
+                "linkImage": "https://cdn.tgdd.vn/2019/11/banner/thang-oppo-800-300-800x300-(1).png"
+              },
+              {
+                "id": 2,
+                "linkImage": "https://cdn.tgdd.vn/2019/11/banner/thu-cu-note10-800-300-800x300-(3).png"
+              },
+              {
+                "id": 3,
+                "linkImage": "https://cdn.tgdd.vn/2019/11/banner/800-300-800x300-(13).png"
+              },
+              {
+                "id": 4,
+                "linkImage": "https://cdn.tgdd.vn/2019/10/banner/800-300-800x300-(27).png"
+              }
+            ];
 
             console.log("this.licenseDetail", this.licenseDetail);
             console.log("res.data", res.data);
