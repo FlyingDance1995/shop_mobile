@@ -8,13 +8,12 @@
         <div id="responsive-nav">
           <!-- NAV -->
           <ul class="main-nav nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Ưu đãi lớn</a></li>
-            <li><a href="#">Danh mục</a></li>
-            <li><a href="#">Laptops</a></li>
-            <li><a href="#">Điện thoại</a></li>
-            <li><a href="#">Cameras</a></li>
-            <li><a href="#">Phụ kiện</a></li>
+            <li v-for="(item, index) in listMenuMain"
+                :class="$route.name === item.params ? 'active' : ''">
+              <nuxt-link :to="`${item.params}`">
+                {{item.categoryName}}
+              </nuxt-link>
+            </li>
           </ul>
           <!-- /NAV -->
         </div>
@@ -29,6 +28,7 @@
 <script>
   export default {
     name: 'Navigation',
+
     components: {
 
     },
@@ -36,14 +36,49 @@
     props: {
     },
 
+    created() {
+      this.getMenuMain();
+    },
+
     data() {
       return {
-
+        listMenuMain: [],
       }
     },
 
     methods: {
-
+      getMenuMain() {
+        this.listMenuMain = [
+          {
+            "id": 0,
+            "params": 'home',
+            "categoryName": "Trang chủ"
+          },
+          {
+            "id": 1,
+            "params": 'phones',
+            "categoryName": "Điên thoại"
+          },
+          {
+            "id": 2,
+            "params": 'laptops',
+            "categoryName": "Máy tính"
+          },
+          {
+            "id": 3,
+            "params": 'cameras',
+            "categoryName": "Máy ảnh"
+          }
+        ];
+        console.log("this.listMenuMain", this.listMenuMain);
+        this.$clientApi.slide.getListSlide(this.$axios)
+          .then(res => {
+            // this.listMenuMain = res.data;
+            console.log("this.listMenuMain", this.listMenuMain);
+          }).catch(err => {
+          this.$Message.error('Có lỗi xảy ra!', err);
+        });
+      }
     }
   }
 </script>

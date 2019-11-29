@@ -25,36 +25,36 @@ export default function ({ $axios, store, redirect, app }) {
     if (isNaN(code)) {
       store.commit('SET_IS_ONLINE', false);
       iview.Message.destroy();
-      iview.Message.error({
-        render: h => {
-          return h('div', {
-              class: 'flex-row center middle',
-              style: {
-                height: '24px'
-              }
-            },
-            [
-              h('span', 'Mất kết nối. Vui lòng thử lại'),
-              h('Icon', {
-                props: {
-                  type: 'md-refresh',
-                  size: 16
-                },
-                class: 'ml-sm',
-                style: {
-                  cursor: 'pointer',
-                  paddingTop: '1px'
-                },
-                on: {
-                  click: () => {
-                    location.reload();
-                  }
-                },
-              })
-            ])
-        },
-        duration: 0,
-      })
+      // iview.Message.error({
+      //   render: h => {
+      //     return h('div', {
+      //         class: 'flex-row center middle',
+      //         style: {
+      //           height: '24px'
+      //         }
+      //       },
+      //       [
+      //         h('span', 'Mất kết nối. Vui lòng thử lại'),
+      //         h('Icon', {
+      //           props: {
+      //             type: 'md-refresh',
+      //             size: 16
+      //           },
+      //           class: 'ml-sm',
+      //           style: {
+      //             cursor: 'pointer',
+      //             paddingTop: '1px'
+      //           },
+      //           on: {
+      //             click: () => {
+      //               location.reload();
+      //             }
+      //           },
+      //         })
+      //       ])
+      //   },
+      //   duration: 0,
+      // })
     }
   });
 }

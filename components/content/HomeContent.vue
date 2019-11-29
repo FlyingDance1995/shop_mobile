@@ -5,48 +5,19 @@
       <!-- container -->
       <div class="container">
         <!-- row -->
-        <div class="row">
-          <!-- shop -->
-          <div class="col-md-4 col-xs-6">
-            <div class="shop">
-              <div class="shop-img">
-                <img src="@/assets/images/shop01.png" alt="">
+        <div v-if="slideImgs[0].id"
+               class="row">
+          <no-ssr>
+            <swiper :options="swiperOption" ref="mySwiper">
+              <div class="swiper-slide" v-for="(img, index) in slideImgs">
+                <img :src="img.linkImage" alt="" width="800" height="300">
               </div>
-              <div class="shop-body">
-                <h3>Laptop<br>Bộ sưu tập</h3>
-                <a href="#" class="cta-btn">Mua ngay <i class="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
-          </div>
-          <!-- /shop -->
 
-          <!-- shop -->
-          <div class="col-md-4 col-xs-6">
-            <div class="shop">
-              <div class="shop-img">
-                <img src="@/assets/images/shop03.png" alt="">
-              </div>
-              <div class="shop-body">
-                <h3>Phụ kiện<br>Bộ sưu tập</h3>
-                <a href="#" class="cta-btn">Mua ngay <i class="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
-          </div>
-          <!-- /shop -->
-
-          <!-- shop -->
-          <div class="col-md-4 col-xs-6">
-            <div class="shop">
-              <div class="shop-img">
-                <img src="@/assets/images/shop02.png" alt="">
-              </div>
-              <div class="shop-body">
-                <h3>Cameras<br>Bộ sưu tập</h3>
-                <a href="#" class="cta-btn">Mua ngay <i class="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
-          </div>
-          <!-- /shop -->
+              <div class="swiper-button-prev" slot="button-prev"></div>
+              <div class="swiper-button-next" slot="button-next"></div>
+              <div class="swiper-pagination" slot="pagination"></div>
+            </swiper>
+          </no-ssr>
         </div>
         <!-- /row -->
       </div>
@@ -934,43 +905,77 @@
 
     data() {
       return {
-        licenseDetail: []
+        slideImgs: [],
+
+        swiperOption: {
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+          },
+          lazy: {
+            loadPrevNext: true,
+            loadOnTransitionStart: true
+          },
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false
+          },
+        },
+        swiperSlides: ['h1-slider-2-background-img.jpg', 'h1-slider-3-background-img.jpg']
       }
     },
 
     methods: {
       getListSlide() {
+        this.slideImgs = [
+          {
+            "id": 1,
+            "linkImage": "https://cdn.tgdd.vn/2019/11/banner/thang-oppo-800-300-800x300-(1).png"
+          },
+          {
+            "id": 2,
+            "linkImage": "https://cdn.tgdd.vn/2019/11/banner/thu-cu-note10-800-300-800x300-(3).png"
+          },
+          {
+            "id": 3,
+            "linkImage": "https://cdn.tgdd.vn/2019/11/banner/800-300-800x300-(13).png"
+          },
+          {
+            "id": 4,
+            "linkImage": "https://cdn.tgdd.vn/2019/10/banner/800-300-800x300-(27).png"
+          }
+        ];
+        console.log("this.slideImgs", this.slideImgs);
         this.$clientApi.slide.getListSlide(this.$axios)
           .then(res => {
-            // this.licenseDetail = res.data;
-            this.licenseDetail = [
-              {
-                "id": 1,
-                "linkImage": "https://cdn.tgdd.vn/2019/11/banner/thang-oppo-800-300-800x300-(1).png"
-              },
-              {
-                "id": 2,
-                "linkImage": "https://cdn.tgdd.vn/2019/11/banner/thu-cu-note10-800-300-800x300-(3).png"
-              },
-              {
-                "id": 3,
-                "linkImage": "https://cdn.tgdd.vn/2019/11/banner/800-300-800x300-(13).png"
-              },
-              {
-                "id": 4,
-                "linkImage": "https://cdn.tgdd.vn/2019/10/banner/800-300-800x300-(27).png"
-              }
-            ];
-
-            console.log("this.licenseDetail", this.licenseDetail);
-            console.log("res.data", res.data);
+            // this.slideImgs = res.data;
+            console.log("this.slideImgs", this.slideImgs);
           }).catch(err => {
           this.$Message.error('Có lỗi xảy ra!', err);
         });
-      }
+      },
     }
   }
 </script>
+
+<style>
+  .swiper-container {
+    height: 300px;
+    background: #fff;
+    color: #ffffff;
+  }
+  .swiper-wrapper {
+    transition-duration: 1000ms !important;
+  }
+  .swiper-slide {
+    text-align: center;
+    transition: all 1500ms cubic-bezier(.85,1.54,.97,1.07) !important;
+  }
+</style>
 
 
 

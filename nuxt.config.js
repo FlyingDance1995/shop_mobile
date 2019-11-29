@@ -80,6 +80,7 @@ module.exports = {
     { src: '~/plugins/slick.min.js', ssr: false},
     { src: '~/plugins/nouislider.min.js', ssr: false},
     { src: '~/plugins/main.js', ssr: false},
+    { src: '~/plugins/swiper.js', ssr: false },
   ],
 
   generate: {
