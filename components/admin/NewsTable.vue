@@ -1,7 +1,9 @@
 <template>
   <div class="p-lg">
     <div class="flex-row middle space-between mb-md">
-      <div></div>
+      <div>
+        Danh sách các sản phẩm điện thoại
+      </div>
       <Button type="primary"
               icon="md-add"
               @click="isShowCreateModal = true">
