@@ -1,23 +1,77 @@
 <template>
   <div>
     <!-- SECTION -->
+    <!--<div class="section">-->
+      <!--&lt;!&ndash; container &ndash;&gt;-->
+      <!--<div class="container">-->
+        <!--&lt;!&ndash; row &ndash;&gt;-->
+        <!--<div v-if="slideImgs[0].id"-->
+               <!--class="row">-->
+          <!--<no-ssr>-->
+            <!--<swiper :options="swiperOption" ref="mySwiper">-->
+              <!--<div class="swiper-slide" v-for="(img, index) in slideImgs">-->
+                <!--<img :src="img.linkImage" alt="" width="800" height="300">-->
+              <!--</div>-->
+
+              <!--<div class="swiper-button-prev" slot="button-prev"></div>-->
+              <!--<div class="swiper-button-next" slot="button-next"></div>-->
+              <!--<div class="swiper-pagination" slot="pagination"></div>-->
+            <!--</swiper>-->
+          <!--</no-ssr>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; /row &ndash;&gt;-->
+      <!--</div>-->
+      <!--&lt;!&ndash; /container &ndash;&gt;-->
+    <!--</div>-->
+    <!-- /SECTION -->
+
+    <!-- SECTION -->
     <div class="section">
       <!-- container -->
       <div class="container">
         <!-- row -->
-        <div v-if="slideImgs[0].id"
-               class="row">
-          <no-ssr>
-            <swiper :options="swiperOption" ref="mySwiper">
-              <div class="swiper-slide" v-for="(img, index) in slideImgs">
-                <img :src="img.linkImage" alt="" width="800" height="300">
+        <div class="row">
+          <!-- shop -->
+          <div class="col-md-4 col-xs-6">
+            <div class="shop">
+              <div class="shop-img">
+                <img src="@/assets/images/shop01.png" alt="">
               </div>
+              <div class="shop-body">
+                <h3>Laptop<br>Bộ sưu tập</h3>
+                <a href="#" class="cta-btn">Mua ngay <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- /shop -->
 
-              <div class="swiper-button-prev" slot="button-prev"></div>
-              <div class="swiper-button-next" slot="button-next"></div>
-              <div class="swiper-pagination" slot="pagination"></div>
-            </swiper>
-          </no-ssr>
+          <!-- shop -->
+          <div class="col-md-4 col-xs-6">
+            <div class="shop">
+              <div class="shop-img">
+                <img src="@/assets/images/shop03.png" alt="">
+              </div>
+              <div class="shop-body">
+                <h3>Phụ kiện<br>Bộ sưu tập</h3>
+                <a href="#" class="cta-btn">Mua ngay <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- /shop -->
+
+          <!-- shop -->
+          <div class="col-md-4 col-xs-6">
+            <div class="shop">
+              <div class="shop-img">
+                <img src="@/assets/images/shop02.png" alt="">
+              </div>
+              <div class="shop-body">
+                <h3>Cameras<br>Bộ sưu tập</h3>
+                <a href="#" class="cta-btn">Mua ngay <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- /shop -->
         </div>
         <!-- /row -->
       </div>
