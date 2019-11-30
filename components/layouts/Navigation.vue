@@ -71,13 +71,13 @@
           }
         ];
         console.log("this.listMenuMain", this.listMenuMain);
-        this.$clientApi.slide.getListSlide(this.$axios)
-          .then(res => {
-            // this.listMenuMain = res.data;
-            console.log("this.listMenuMain", this.listMenuMain);
-          }).catch(err => {
-          this.$Message.error('Có lỗi xảy ra!', err);
-        });
+        // this.$clientApi.slide.getListSlide(this.$axios)
+        //   .then(res => {
+        //     // this.listMenuMain = res.data;
+        //     console.log("this.listMenuMain", this.listMenuMain);
+        //   }).catch(err => {
+        //   this.$Message.error('Có lỗi xảy ra!', err);
+        // });
       }
     }
   }

@@ -6,21 +6,18 @@
       <div class="login-form screen-getting-form">
         <Form ref="loginForm"
               :model="vmLogin"
-              style="width: 400px"
+              style="width: 350px"
               :rules="ruleInline">
-          <!--<svg class="icon-white mb-xl"-->
-               <!--style="height: 30px; width: 278px">-->
-            <!--<use :xlink:href="`#${productName}`" xmlns:xlink="http://www.w3.org/1999/xlink"></use>-->
-          <!--</svg> -->
           <div class="icon-white mb-xl flex-row middle space-between"
                style="height: 30px; width: 100%">
-             <p class="fs-xl">
+             <a href="/home"
+                class="fs-xl">
                C1702L
-             </p>
+             </a>
 
-            <nuxt-link to="/home"
-                       class="flex-row middle cursor">
-              <span class="mr-xs">
+            <a href="/home"
+               class="flex-row middle cursor">
+              <span style="margin-right: 4px">
                 home
               </span>
 
@@ -28,7 +25,7 @@
                    width="12"
                    style="cursor: pointer"
                    alt="">
-            </nuxt-link>
+            </a>
           </div>
 
           <FormItem prop="email">
@@ -61,31 +58,38 @@
               <Button type="primary"
                       :loading="loading"
                       long
-                      class="btn-login btn-getting-form"
                       @click="handleSubmit">
                 Đăng nhập
               </Button>
             </FormItem>
           </div>
+
+          <div class="flex-row center mb-xs fs-md"
+               style="justify-content: space-between; margin-top: -15px">
+            <router-link to="/register"
+                         class="hover-underline">
+              Đăng kí tài khoản
+            </router-link>
+
+            <router-link to="/forgot-password"
+                         class="hover-underline">
+              Quên mật khẩu?
+            </router-link>
+          </div>
         </Form>
+      </div>
+
+      <div style="width: 100%; text-align: center; margin-top: 30px;">
+        <a :href="`mailto:${emailSupport}`"
+           class="hover-underline">
+          Liên hệ: {{ emailSupport }}
+        </a>
+        <br>
+        chúng tôi luôn sẵn sàng hỗ trợ!
       </div>
     </div>
   </div>
 </template>
-
-<!--<style scoped>-->
-  <!--.bg {-->
-    <!--/*background-image: url("../../assets/images/bg-login.png");*/-->
-    <!--object-fit: cover;-->
-    <!--background-repeat: no-repeat;-->
-    <!--background-size: cover;-->
-    <!--position: fixed;-->
-    <!--top: 0;-->
-    <!--left: 0;-->
-    <!--right: 0;-->
-    <!--bottom: 0;-->
-  <!--}-->
-<!--</style>-->
 
 <style scoped lang="less">
   .login {
@@ -96,14 +100,14 @@
     justify-content: center;
 
     .login-section {
-      margin-top: 11%;
+      margin-top: 10%;
       position: relative;
       z-index: 1;
 
       .login-form {
         background: #fff;
         border-radius: 5px;
-        padding: 35px 20px 45px 20px;
+        padding: 35px 20px 35px 20px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
       }
     }
@@ -120,7 +124,7 @@
   import {mapMutations} from 'vuex';
   import Vue from 'vue'
   import VueParticles from 'vue-particles'
-  Vue.use(VueParticles)
+  Vue.use(VueParticles);
 
   export default {
     name: 'LoginForm',
@@ -142,8 +146,8 @@
     },
 
     computed: {
-      productName(){
-        return process.env.PRODUCT === '4NET' ? 'product-name-4net' : 'product-name-4web';
+      emailSupport(){
+        return process.env.SUPPORT_EMAIL;
       }
     },
 
@@ -152,8 +156,8 @@
         error: '',
         // TODO: Remove when finish test
         vmLogin: {
-          email: 'admin@mvs.vn',
-          password: 'Mvs@123456',
+          email: 'lexuansu246@gmail.com',
+          password: 'Su@123456',
         },
         ruleInline: {
           email: [
@@ -183,7 +187,7 @@
               }).catch(error => {
               this.loading = false;
               if (error.response.status === 500) {
-                this.error = "Có lỗi khi thực hiện đăng nhập vào thiết bị";
+                this.error = "Có lỗi khi thực hiện đăng nhập vào trang quản trị";
               }else if (error.response.status === 400){
                 this.error = "Email hoặc mật khẩu đăng nhập không đúng";
               } else {
@@ -206,7 +210,7 @@
             id: res.data.id
           });
           this.loading = false;
-          this.$router.push('/');
+          this.$router.push('/admin');
         }).catch(() => {
           this.loading = false;
         });

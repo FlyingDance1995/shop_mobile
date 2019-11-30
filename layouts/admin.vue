@@ -2,21 +2,36 @@
   <div class="layout">
     <Layout>
       <Sider breakpoint="md" collapsible :collapsed-width="78" v-model="isCollapsed">
-        <Menu active-name="1-2" theme="dark" width="auto" :class="menuitemClasses">
+        <Menu active-name="1-1" theme="dark" width="auto" :class="menuitemClasses">
+          <div class="flex-row middle center fs-xl"
+               style="height: 64px; width: 100%">
+            <a href="/home"
+               class="logo-admin">
+              C1702L
+            </a>
+          </div>
+
           <MenuItem name="1-1">
-            <Icon type="md-phone-portrait"></Icon>
+            <Icon type="md-analytics" />
+            <span>
+             Tổng quan
+            </span>
+          </MenuItem>
+
+          <MenuItem name="1-2">
+            <Icon type="md-phone-portrait"/>
             <span>
               D/S Điện thoại
             </span>
           </MenuItem>
-          <MenuItem name="1-2">
-            <Icon type="md-desktop"></Icon>
+          <MenuItem name="1-3">
+            <Icon type="md-desktop"/>
             <span>
               D/S Máy tính
             </span>
           </MenuItem>
-          <MenuItem name="1-3">
-            <Icon type="md-camera"></Icon>
+          <MenuItem name="1-4">
+            <Icon type="md-camera"/>
             <span>
               D/S Máy ảnh
             </span>
@@ -27,12 +42,18 @@
       <Layout>
 
         <Header class="layout-header-bar">
-          Electro.
+          <div class="flex-row middle space-between">
+            <div class="">
+              Tổng quan
+            </div>
+            <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" />
+          </div>
         </Header>
 
         <Content class="content-admin">
           <nuxt-child/>
         </Content>
+
       </Layout>
     </Layout>
   </div>
@@ -75,7 +96,7 @@
   }
 </script>
 
-<style scoped>
+<style lang="less">
   .layout{
     border: 1px solid #d7dde4;
     background: #f5f7f9;
@@ -87,6 +108,7 @@
 
   .layout-header-bar{
     background: #e8eaec;
+    padding: 0 20px;
     box-shadow: 0 1px 1px rgba(0,0,0,.1);
   }
 

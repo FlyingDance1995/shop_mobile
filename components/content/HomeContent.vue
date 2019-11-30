@@ -950,19 +950,19 @@
           }
         ];
         console.log("this.slideImgs", this.slideImgs);
-        this.$clientApi.slide.getListSlide(this.$axios)
-          .then(res => {
-            // this.slideImgs = res.data;
-            console.log("this.slideImgs", this.slideImgs);
-          }).catch(err => {
-          this.$Message.error('Có lỗi xảy ra!', err);
-        });
+        // this.$clientApi.slide.getListSlide(this.$axios)
+        //   .then(res => {
+        //     // this.slideImgs = res.data;
+        //     console.log("this.slideImgs", this.slideImgs);
+        //   }).catch(err => {
+        //   this.$Message.error('Có lỗi xảy ra!', err);
+        // });
       },
     }
   }
 </script>
 
-<style>
+<style scoped>
   .swiper-container {
     height: 300px;
     background: #fff;
