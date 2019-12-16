@@ -13,7 +13,10 @@ import startup from "./startup"
 import networks from "./networks"
 import fix from "./fix"
 import risks from "./risks"
+
 import slide from "./slide"
+import category from "./category"
+import products from "./products"
 
 const api = {
   auth,
@@ -31,7 +34,10 @@ const api = {
   networks,
   fix,
   risks,
-  slide
+
+  slide,
+  category,
+  products
 };
 
 export default api;

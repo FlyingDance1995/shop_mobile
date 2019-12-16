@@ -205,10 +205,10 @@
         this.$store.commit('SET_AUTH', res.data);
         this.$store.commit('SET_AUTH_TO_COOKIE', res.data);
         this.$clientApi.folders.folderDetail(this.$axios, 'root').then(res => {
-          this.$store.commit('SET_ROOT', {
-            name: res.data.name,
-            id: res.data.id
-          });
+          // this.$store.commit('SET_ROOT', {
+          //   name: res.data.name,
+          //   id: res.data.id
+          // });
           this.loading = false;
           this.$router.push('/admin');
         }).catch(() => {

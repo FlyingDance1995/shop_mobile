@@ -14,7 +14,7 @@
             VNĐ
           </a></li>
           <li><a href="/login"><i class="fa fa-user-o"></i>
-            My Account
+            Tài khoản
           </a></li>
         </ul>
       </div>
