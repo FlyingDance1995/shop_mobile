@@ -31,7 +31,7 @@
     "moment": "^2.24.0",
     "nuxt": "^2.7.1",
     "popper.js": "^1.15.0",
-    "socket.io": "^2.2.0",
+    "socket.io": "^2.5.0",
     "universal-cookie": "^4.0.0",
     "v-click-outside": "^2.1.1",
     "v-clipboard": "^2.2.2",
